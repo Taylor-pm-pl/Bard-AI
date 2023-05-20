@@ -6,9 +6,9 @@ namespace TaylorR\BardAI;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\SingletonTrait;
+use TaylorR\BardAI\commands\BardAI;
 use TaylorR\BardAI\task\VerifyClient;
 use TaylorR\MeetBard\Bard;
-use TaylorR\MeetBard\security\User;
 
 class Loader extends PluginBase
 {
@@ -17,23 +17,27 @@ class Loader extends PluginBase
 
     protected ?Bard $client = null;
 
-    private array $config = [];
-
     protected function onEnable(): void
     {
         self::setInstance($this);
         $this->saveDefaultConfig();
-        $this->config = $this->getConfig()->getAll();
-        $this->getServer()->getAsyncPool()->submitTask(new VerifyClient($this->config["token"]));
+        $config = $this->getConfig()->getAll();
+        $this->getServer()->getAsyncPool()->submitTask(new VerifyClient($config["token"]));
+        $this->getServer()->getCommandMap()->register("bardai", new BardAI());
     }
 
-    public function setClient(Bard $client): void
+    public function setBard(Bard $client): void
     {
         $this->client = $client;
     }
 
+    public function getBard(): ?Bard
+    {
+        return $this->client;
+    }
+
     public function isReady(): bool
     {
-        return $this->client instanceof Bard && $this->client->isValid();
+        return $this->getBard() instanceof Bard && $this->getBard()->isValid();
     }
 }

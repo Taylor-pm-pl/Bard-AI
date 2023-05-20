@@ -6,9 +6,12 @@ namespace TaylorR\BardAI\commands;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
+use pocketmine\player\Player;
 use pocketmine\plugin\Plugin;
 use pocketmine\plugin\PluginOwned;
+use TaylorR\BardAI\form\AskForm;
 use TaylorR\BardAI\Loader;
+use TaylorR\BardAI\utils\Utils;
 
 class BardAI extends Command implements PluginOwned
 {
@@ -27,12 +30,21 @@ class BardAI extends Command implements PluginOwned
      */
     public function execute(CommandSender $sender, string $commandLabel, array $args): void
     {
-        if (!$this->testPermission($sender)) return;
-        if (!Loader::getInstance()->isReady()) {
-            $sender->sendMessage("§cBardAI is not ready yet!");
+        if (!$this->testPermission($sender)) {
+            $sender->sendMessage(Utils::getMsg("no-permission"));
             return;
         }
 
+        if (!Loader::getInstance()->isReady()) {
+            $sender->sendMessage(Utils::getMsg("not-ready"));
+            return;
+        }
+
+        if (!$sender instanceof Player) {
+            $sender->sendMessage(Utils::getMsg("player-only"));
+            return;
+        }
+        AskForm::send($sender);
     }
 
     /**

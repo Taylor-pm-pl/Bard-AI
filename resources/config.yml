@@ -1,1 +1,18 @@
 token: ''
+
+messages:
+  not-ready: '&cThe AI is not ready yet, please check token in config.yml'
+  player-only: '&cThis command can only be used by players.'
+  no-permission: '&cYou do not have permission to use this command.'
+
+ask-form:
+  title: 'Bard AI'
+  label: 'Ask Bard a question!'
+  input:
+    text: 'Question'
+    placeholder: 'Ask a question...'
+
+result-form:
+  title: 'Bard AI'
+  content: '{content}'
+  button: '&cClose'

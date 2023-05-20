@@ -26,6 +26,6 @@ class VerifyClient extends AsyncTask
     public function onCompletion(): void
     {
         $token = $this->getResult();
-        Loader::getInstance()->setClient($token);
+        Loader::getInstance()->setBard($token);
     }
 }
