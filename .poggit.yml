@@ -9,6 +9,6 @@ projects:
     libs:
       - src: Vecnavium/FormsUI/FormsUI
         version: ^1.1.2
-      - src: TaylorR47/MeetBard/Meet-Bard
+      - src: TaylorR47/Meet-Bard/Meet-Bard
         version: ^1.0.0
 ...
