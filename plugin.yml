@@ -1,0 +1,11 @@
+name: BardAI
+main: TaylorR\BardAI\Loader
+version: 1.0.0
+api: 4.0.0
+author: TaylorR
+description: A plugin that answers all user questions using BardAI
+
+permissions:
+    bardai.command:
+        description: Allows the user to use the /bardai command
+        default: true
