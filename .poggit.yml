@@ -4,7 +4,7 @@ branches:
 - main
 projects:
   Bard-AI:
-    icon: "assets/img/logo.png"
+    icon: "asset/img/logo.png"
     path: ""
     libs:
       - src: Vecnavium/FormsUI/FormsUI
