@@ -7,7 +7,6 @@ namespace TaylorR\BardAI\task;
 use pocketmine\scheduler\AsyncTask;
 use pocketmine\Server;
 use TaylorR\BardAI\form\ResultForm;
-use TaylorR\BardAI\Loader;
 use TaylorR\MeetBard\Bard;
 use TaylorR\MeetBard\security\User;
 

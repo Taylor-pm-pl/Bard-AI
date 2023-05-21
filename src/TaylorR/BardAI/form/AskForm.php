@@ -25,10 +25,10 @@ class AskForm
             }
             $question = $data[1];
             if ($question === "") {
-                $player->sendMessage("§cPlease enter a question.");
+                $player->sendMessage(Utils::getMsg("empty-question"));
                 return;
             }
-            $player->sendTip("§aAsking BardAI...");
+            $player->sendTip(Utils::getMsg("processing"));
             $player->getServer()->getAsyncPool()->submitTask(
                 new BardProcess(
                     $player->getName(),
