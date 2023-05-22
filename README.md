@@ -6,6 +6,12 @@
 ✨ **a plugin for PMMP that answers all user questions using Google Bard.**
 </div>
 
+# Features
+- Ask a question to Google Bard
+- Customizable messages
+- Customizable forms
+- FormUI support
+
 # Commands & Permissions
 
 | Command   | Description | Permission |
