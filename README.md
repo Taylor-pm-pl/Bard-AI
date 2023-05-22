@@ -3,7 +3,7 @@
 [![Discord](https://img.shields.io/discord/1100650029573738508.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/yAhsgskaGy)
 
 **NOTICE:** This plugin branch is for PocketMine-MP 4. <br/>
-✨ **a plugin for PMMP that answers all user questions using Google Bard.**
+✨ **Bard-AI is a Google Bard AI integrated chatbot plugin like ChatGPT**
 </div>
 
 # Features
